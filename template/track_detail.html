@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<h1>hello</h1>
+	<form method='post' enctype="multipart/form-data">
+		{% csrf_token %}
+	  <label for="fname">phone number</label>
+	  <input type="text" id="fname" name="num" placeholder="mobile number..">
+	 
+	  <button onclick="add()">click</button>
+
+	</form>
+	{%if post.name%}
+	<a href="sms:/* phone number here */?body=/* body text here */">Link</a>
+	{%endif%}
+
+	<script type="text/javascript">
+	function add() {
+		var ad=document.getElementById('fname').value;
+		var url = "sms:/*" + ad + "*/?body=/* body text here */";
+		document.write('<a href="' + url + '">Link</a>');
+	}
+	</script>
+	
+
+
+	<h1>ad</h1>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static '/add.css' %}">
+</head>
+<body>
+	
+	<h1>add data here</h1>
+	<form method='post' enctype="multipart/form-data" action="/">
+		{% csrf_token %}
+	  <label for="fname">First Name</label>
+	  <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+	  <label for="lname">tracking no.</label>
+	  <input type="text" id="lname" name="track" placeholder="Your last name..">
+
+	 
+
+	  <input type="submit" value="Submit">
+	</form>
+</body>
+</html>
